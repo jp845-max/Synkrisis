@@ -1,0 +1,84 @@
++-------------------+     +-------------------------+     +---------------------------------+
+|  1. LANDING PAGE  |---->|   2. SIGN-UP PAGE       |     |   3. MAIN FORUM / DASHBOARD    |
+| (The Hook)        |     | (The Gateway)           |     | (The Marketplace)              |
++-------------------+     +-------------------------+     +---------------------------------+
+|                   |     | +---------------------+ |     | +-----------------------------+ |
+| Logo | For Artists|     | | ARTIST SIGN-UP      | |     | | SIDEBAR (User Info, Nav)    | |
+| How it Works      |     | | Name, Email,         | |     | +-----------------------------+ |
+|                   |     | | Needs: [Dev] [Mktg] | |     | | TAB: Browse | My Projects   | |
+| TWO BIG BUTTONS:  |     | +---------------------+ |     | |       Consulting Requests    | |
+| [ARTIST] [BUILDER]|     | | PROVIDER SIGN-UP    | |     | +-----------------------------+ |
+|                   |     | | Name, Email,         | |     | | SEARCH / FILTERS             | |
+|                   |     | | Portfolio/GitHub,    | |     | +-----------------------------+ |
+|                   |     | | Skills Checkbox      | |     | | POST CARD:                   | |
+|                   |     | +---------------------+ |     | | "Artist needs Portfolio Site"| |
++-------------------+     +-------------------------+     | | Budget: $300 | SKILL: Web    | |
+                                                          +---------------------------------+
+                                                                        |
+                                                                        v
+                                      +---------------------------------------------------+
+                                      |  4. ARTIST POST-CREATION CHOICE                  |
+                                      | (After sign-up or "Post Requirement" click)      |
+                                      +---------------------------------------------------+
+                                      |                                                   |
+                                      |   [POST PUBLICLY TO FORUM]   [REQUEST CONSULT]   |
+                                      |                                                   |
+                                      | (If "Request Consult" is clicked)                |
+                                      +---------------------------------------------------+
+                                                                        |
+                                                                        v
+                                      +---------------------------------------------------+
+                                      |  5. CONSULTING REQUEST PAGE                      |
+                                      | (Platform / Internal Team)                        |
+                                      +---------------------------------------------------+
+                                      | +-----------------------------------------------+ |
+                                      | | ARTIST DETAILS:                               | |
+                                      | | - Description of project (free text)         | |
+                                      | | - Budget range, timeline                     | |
+                                      | | - Preferred skills                           | |
+                                      | +-----------------------------------------------+ |
+                                      | | CONSULTING OPTIONS:                           | |
+                                      | | [Schedule a Call (Calendly)]                 | |
+                                      | | [Submit Request]                              | |
+                                      | +-----------------------------------------------+ |
+                                      |                                                   |
+                                      | (Platform reviews request, then manually matches |
+                                      |  or uses algorithm to suggest providers)         |
+                                      +---------------------------------------------------+
+                                                                        |
+                                                    (Provider recommended / assigned)
+                                                                        v
+                                      +---------------------------------------------------+
+                                      |  6. PROJECT DETAIL PAGE (Same as before)         |
+                                      | (Now shows "Assigned via Consulting")            |
+                                      +---------------------------------------------------+
+                                      | +-------------------+  +----------------------+  |
+                                      | | ARTIST'S POST:    |  | PROVIDER SIDEBAR:    |  |
+                                      | | "Need one-page    |  | Your Profile Pic     |  |
+                                      | |  portfolio site"  |  | Skills: HTML/CSS/JS  |  |
+                                      | | Full Description  |  |                      |  |
+                                      | | Deliverables:     |  | [APPLY FOR PROJECT]  |  |
+                                      | | - Homepage        |  +----------------------+  |
+                                      | | - Contact Form    |                           |
+                                      | +-------------------+                           |
+                                      +---------------------------------------------------+
+                                                                        |
+                                                    (Provider Applies / Artist Accepts)
+                                                                        v
+                                      +---------------------------------------------------+
+                                      |  7. CONTRACT & PAYMENT PAGE                       |
+                                      | (The Agreement)                                   |
+                                      +---------------------------------------------------+
+                                      | Project: Portfolio Site for Artist X             |
+                                      | Provider: Builder Y                               |
+                                      | Consulting Fee (if applicable): $0 (included)    |
+                                      |                                                  |
+                                      | CONTRACT TERMS:                                   |
+                                      | [Milestone 1: Design Mockup - $100]              |
+                                      | [Milestone 2: Full Site Build - $200]            |
+                                      |                                                  |
+                                      | TOTAL STIPEND: $300                               |
+                                      | Platform Fee: $30 (10%)                           |
+                                      |                                                  |
+                                      | [ACCEPT & PAY (Artist)]  [ACCEPT (Provider)]     |
+                                      +---------------------------------------------------+
