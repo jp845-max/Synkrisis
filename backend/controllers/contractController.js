@@ -2,6 +2,7 @@ import Contract from '../models/Contract.js';
 import Project from '../models/Project.js';
 import User from '../models/User.js';
 import Review from '../models/Review.js';
+import { calculateCommission } from '../utils/commission.js';
 import {
   sendContractCreated,
   sendContractAccepted,
@@ -54,9 +55,10 @@ export const createContract = async (req, res, next) => {
     }
 
     const totalMilestonesAmount = milestones.reduce((sum, m) => sum + m.amount, 0);
-    const platformFeePercentage = 10;
-    const platformFee = Math.round(totalMilestonesAmount * (platformFeePercentage / 100));
-    const totalAmount = totalMilestonesAmount + platformFee + consultingFee;
+    const totalAmount = totalMilestonesAmount + consultingFee;
+
+    // Calculate tiered commission
+    const { commissionRate, commissionAmount, providerPayout } = calculateCommission(totalAmount);
 
     const contract = await Contract.create({
       project: projectId,
@@ -64,7 +66,9 @@ export const createContract = async (req, res, next) => {
       provider: providerId,
       milestones,
       consultingFee,
-      platformFeePercentage,
+      platformFeePercentage: commissionRate,
+      platformFeeAmount: commissionAmount,
+      providerPayout,
       totalAmount,
     });
 

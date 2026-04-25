@@ -3,11 +3,20 @@ import crypto from 'crypto';
 import Contract from '../models/Contract.js';
 import { calculateCommission } from '../utils/commission.js';
 
-// Initialize Razorpay
-const razorpay = new Razorpay({
-  key_id: process.env.RAZORPAY_KEY_ID || 'dummy',
-  key_secret: process.env.RAZORPAY_KEY_SECRET || 'dummy',
-});
+// Lazy-initialize Razorpay to avoid crash if keys are not set
+let razorpay;
+const getRazorpay = () => {
+  if (!razorpay) {
+    if (!process.env.RAZORPAY_KEY_ID || !process.env.RAZORPAY_KEY_SECRET) {
+      throw new Error('Razorpay keys not configured. Set RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET in env vars.');
+    }
+    razorpay = new Razorpay({
+      key_id: process.env.RAZORPAY_KEY_ID,
+      key_secret: process.env.RAZORPAY_KEY_SECRET,
+    });
+  }
+  return razorpay;
+};
 
 // @desc    Create Razorpay Order for Contract
 // @route   POST /api/payments/create-order
@@ -35,7 +44,7 @@ export const createOrder = async (req, res) => {
       receipt: `receipt_contract_${contract._id}`,
     };
 
-    const order = await razorpay.orders.create(options);
+    const order = await getRazorpay().orders.create(options);
 
     if (!order) {
       return res.status(500).json({ message: 'Error creating Razorpay order' });
