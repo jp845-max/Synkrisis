@@ -28,6 +28,7 @@ import paymentRoutes from './routes/paymentRoutes.js';
 connectDB();
 
 const app = express();
+app.set('trust proxy', 1); // Required for rate-limiting behind Render proxy
 
 // Middleware
 app.use(helmet()); // Security headers
